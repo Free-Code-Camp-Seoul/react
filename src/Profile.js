@@ -5,10 +5,20 @@ export default function Profile() {
   const profiles = useFeaturedData("profiles");
   console.log(profiles);
   return (
-    <ul>
-      {profiles.map(({ name }) => (
-        <li>{name}</li>
+    <div className="profile-holder">
+      {profiles.map(({ name,image, title, quote }) => (
+        <div className="profile">
+          <div className="image-holder" style={{backgroundImage:'url('+image+')'}}>
+
+          </div>
+          <div>
+            <h1>{name}</h1>
+            <h3>{title}</h3>
+            <blockquote>{quote}</blockquote>
+          </div>
+
+        </div>
       ))}
-    </ul>
+    </div>
   );
 }

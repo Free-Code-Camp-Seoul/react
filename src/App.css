@@ -36,3 +36,32 @@
     transform: rotate(360deg);
   }
 }
+
+
+.image-holder {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: blue;
+  /* commented for demo
+  float: left;
+  margin-left: 125px;
+  margin-top: 20px;
+  */
+
+  /*for demo*/
+  display:inline-block;
+  vertical-align:middle;
+  background-position: center;
+}
+
+.profile{
+  width: 30%;
+  max-width:200px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 5px
+}
