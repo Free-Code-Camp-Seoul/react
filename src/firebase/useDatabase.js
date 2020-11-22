@@ -9,7 +9,6 @@ const file = {
 };
 
 const useDatabase = (file) => {
-  // const [docs, setDocs] = useState([]);
   const [msg, setMsg] = useState("");
 
   useEffect(() => {
