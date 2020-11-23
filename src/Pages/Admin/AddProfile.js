@@ -1,57 +1,69 @@
 import React, { useState } from "react";
 import useDatabase from "../../firebase/useDatabase";
+// import "../../DefaultProfile.png";
 
 export const AddProfile = () => {
   const profileDateInit = {
     name: "",
-    image: "",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/fcc-react-50845.appspot.com/o/DefaultProfile.jpeg?alt=media&token=300e262a-fdcc-4624-846b-961f65fcfdd4",
     role: "",
-    quote: "",
+    title: "",
+    github: "",
   };
 
   const [profileData, setProfileData] = useState(profileDateInit);
+  const [file, setFile] = useState(null);
 
-  const { msg } = useDatabase(profileDataInput);
+  const { msg } = useDatabase(file);
 
   console.log(msg);
 
   const handleOnChange = (e) => {
     setProfileData({ ...profileData, [e.target.name]: e.target.value });
   };
+  console.log({ profileData });
 
   const handlelOnSubmit = () => {
-    const profileDataInput = {
-      name: "Damien",
-      image: "should be from firebase",
-      role: "owner",
-      quote: "Pink is just a fancy shade of grey",
-    };
-    setProfileData(profileDataInput);
+    setFile(profileData);
   };
 
   return (
-    <div>
-      <form onSubmit={handlelOnSubmit}>
+    <div className="profile">
+      <form onSubmit={handlelOnSubmit} autoComplete="off">
+        <input
+          type="image"
+          className="image-holder"
+          onChange={handleOnChange}
+          name="image"
+          placeholder="Image"
+          src={profileData.image}
+        />
         <input
           onChange={handleOnChange}
-          name={profileName}
+          name="name"
+          placeholder={"Name"}
           value={profileData.name}
         />
         <input
           onChange={handleOnChange}
-          name={profileImage}
-          value={profileData.image}
+          name="title"
+          placeholder="Title"
+          value={profileData.title}
         />
         <input
           onChange={handleOnChange}
-          name={profileRole}
-          value={profileData.role}
-        />
-        <input
-          onChange={handleOnChange}
-          name={profileQuote}
+          name="quote"
+          placeholder="Quote"
           value={profileData.quote}
         />
+        <input
+          onChange={handleOnChange}
+          name="github"
+          placeholder="Github"
+          value={profileData.github}
+        />
+        <button type="submit">Submit</button>
       </form>
     </div>
   );

@@ -1,5 +1,9 @@
 .App {
+  display: flex;
   text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .App-logo {
@@ -37,14 +41,13 @@
   }
 }
 
-
 .image-holder {
   position: relative;
   width: 150px;
   height: 150px;
   border-radius: 50%;
   overflow: hidden;
-  background-color: blue;
+  background-color: lightblue;
   /* commented for demo
   float: left;
   margin-left: 125px;
@@ -52,16 +55,36 @@
   */
 
   /*for demo*/
-  display:inline-block;
-  vertical-align:middle;
+  display: inline-block;
+  vertical-align: middle;
   background-position: center;
 }
 
-.profile{
-  width: 30%;
-  max-width:200px;
+.profile {
+  width: 200px;
   border: 1px solid black;
   border-radius: 5px;
   padding: 20px;
-  margin: 5px
+  margin: 5px;
+}
+
+input {
+  margin: 0.75em;
+  padding: 8px;
+}
+
+/* *** Utils *** */
+
+.section {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: 1em;
+  height: fit-content;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
 }
