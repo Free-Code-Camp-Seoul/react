@@ -11,8 +11,10 @@ export default function Profile() {
         <div className="profile">
           <div
             className="image-holder"
-            style={{ backgroundImage: "url(" + image + ")" }}
-          ></div>
+            // style={{ backgroundImage: "url(" + image + ")" }}
+          >
+            <img src={image}></img>
+          </div>
           <div>
             <h1>{name}</h1>
             <h3>{title}</h3>

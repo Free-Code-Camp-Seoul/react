@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-color: #f5f6f7;
 }
 
 .App-logo {
@@ -59,13 +60,37 @@
   vertical-align: middle;
   background-position: center;
 }
+/* input[type="file"] {
+  display: none;
+} */
+
+.hover-above-image {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  position: absolute;
+  left: -10px;
+  top: -20px;
+  height: 120%;
+  width: 110%;
+  opacity: 0;
+  z-index: 10;
+}
+
+.hover-above-image:hover {
+  background-color: black;
+  opacity: 30%;
+}
 
 .profile {
   width: 200px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 5px;
   padding: 20px;
   margin: 5px;
+  background-color: white;
+  color: #3b3b4f;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
 input {
@@ -87,4 +112,10 @@ input {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1rem;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
